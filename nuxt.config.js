@@ -35,9 +35,20 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
+
+  env: {
+    spotifyId: process.env.SPOTIFY_CLIENT_ID,
+    clientUrl: process.env.CLIENT_URL
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    watch: ['api'],
+    extend(config, ctx) {}
+  },
+
+  serverMiddleware: ['~/api']
 }
