@@ -1,3 +1,7 @@
+import axios from 'axios'
+
+const clientUrl = process.env.CLIENT_URL
+
 // instantiated defaults on state
 export const state = () => ({
   isConnected: false,
